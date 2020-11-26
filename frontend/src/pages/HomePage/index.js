@@ -3,6 +3,7 @@ import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'reac
 import Header from '../../components/Header';
 import { ContentContainer, Form, AdsBlock } from './styles';
 import ShortenerService from '../../services/shortenerService';
+import AdSense from '../../components/AdSense';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -89,8 +90,11 @@ class HomePage extends React.Component {
                     </Form>
                 </ContentContainer>
                 <ContentContainer>
-                    <AdsBlock>Adsense</AdsBlock>
+                    <AdsBlock>
+                        <AdSense />
+                    </AdsBlock>
                 </ContentContainer>
+                <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             </Container>
         )
     }
