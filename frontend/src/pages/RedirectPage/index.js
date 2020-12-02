@@ -23,8 +23,12 @@ class RedirectPage extends React.Component {
 
         try {
             const service = new ShortenerService();
-            const { url } = await service.getLink(code);
+            let { url } = await service.getLink(code);
 
+            if (!url.startsWith('http')) {
+                url = 'http://' + url;
+            }
+                
             window.location = url;
         } catch (error) {
             this.setState({ isLoading: false, errorMessage: 'Ops, a url solicitada não existe!' });

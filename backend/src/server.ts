@@ -18,3 +18,8 @@ cat /proc/sys/fs/inotify/max_user_watches
 
 # config variable name (not runnable)
 fs.inotify.max_user_watches=524288*/
+
+/* AWS
+rd*hvBa6
+@#$(aws)$#@
+*/

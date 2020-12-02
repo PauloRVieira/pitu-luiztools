@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import { ContentContainer, Form, AdsBlock } from './styles';
 import ShortenerService from '../../services/shortenerService';
 import AdSense from '../../components/AdSense';
+import vars from '../../configs/vars';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -72,17 +73,17 @@ class HomePage extends React.Component {
                                     <InputGroup className="mb-2">
                                         <FormControl
                                             autoFocus={true}
-                                            defaultValue={`https://pitu.tk/${code}`}
+                                            defaultValue={vars.HOST_APP + code}
                                             ref={(input) => this.inputURL = input}
                                         />
                                         <InputGroup.Append>
                                             <Button variant="outline-secondary" onClick={() => this.copyToClipboard()}>Copiar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                                    <p>Para acompanhar as estatísticas, acesse https://pitu.tk/{code}/stats</p>
+                                    <p>Para acompanhar as estatísticas, acesse {vars.HOST_APP + code}/stats</p>
                                 </>
                             )
-                        ) };
+                        ) }
 
                         { errorMessage && 
                             <Alert variant="danger">{errorMessage}</Alert>

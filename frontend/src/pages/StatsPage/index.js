@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Header from '../../components/Header';
 import { StatsBox, StatsBoxTitle, StatsContainer, StatsRow } from './styles';
 import ShortenerService from '../../services/shortenerService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { parseISO, formatRelative } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import vars from '../../configs/vars';
 
 class StatsPage extends React.Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class StatsPage extends React.Component {
                     </StatsContainer>
                 ) : (
                     <StatsContainer className="text-center">
-                        <p><b>https://pitu.tk/{shortenerURL.code}</b></p>
+                        <p><b>{vars.HOST_APP + shortenerURL.code}</b></p>
                         <p>Redireciona para: <br/>{shortenerURL.url}</p>
                         <StatsRow>
                             <StatsBox>
